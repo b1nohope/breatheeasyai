@@ -150,7 +150,7 @@ export default function CampPage() {
             {[
               { icon: Calendar, label: '4 Weeks', sub: '8 Sessions Total' },
               { icon: Users, label: 'Ages 6–17', sub: '3 Age Tiers' },
-              { icon: MapPin, label: 'Clarksville, TN', sub: 'YMCA Fun Co' },
+              { icon: MapPin, label: 'Clarksville, TN', sub: 'In-Person Sessions' },
               { icon: Clock, label: '45–90 min', sub: 'Per Session' },
             ].map(({ icon: Icon, label, sub }) => (
               <div key={label} className="flex flex-col items-center gap-2">
@@ -303,7 +303,7 @@ export default function CampPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-brand-dark rounded-3xl p-10 md:p-16 text-center text-white">
             <p className="text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-4">
-              For YMCA &amp; Community Partners
+              For Community Partners
             </p>
             <h2
               className="text-3xl md:text-4xl font-bold mb-6"
@@ -339,7 +339,7 @@ export default function CampPage() {
             Spots are limited. Enroll today.
           </h2>
           <p className="text-brand-silver text-lg leading-relaxed mb-10">
-            Open enrollment is now live at YMCA Fun Co in Clarksville, TN. Sessions fill fast —
+            Open enrollment is now live in Clarksville, TN. Sessions fill fast —
             secure your child&apos;s spot before the summer rush.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

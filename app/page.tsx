@@ -88,7 +88,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center items-center gap-8 md:gap-16">
           <div className="flex items-center gap-2">
             <Shield size={16} className="text-brand-cyan" />
-            <span className="text-sm text-muted-foreground">YMCA Partnership</span>
+            <span className="text-sm text-muted-foreground">Background-Checked Instructors</span>
           </div>
           <div className="flex items-center gap-2">
             <GraduationCap size={16} className="text-brand-cyan" />
@@ -168,7 +168,7 @@ export default function Home() {
                 </p>
                 <h3 className="text-xl font-semibold mb-3">PromptEz Summer Camp</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  A hands-on, week-long camp where kids ages 8–16 learn to create with AI — storybooks,
+                  A hands-on, 4-week camp where kids ages 6–17 learn to create with AI — storybooks,
                   art, inventions — guided by real instructors.
                 </p>
                 <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-cyan group-hover:gap-3 transition-all duration-200">
@@ -302,7 +302,7 @@ export default function Home() {
             Bring AI literacy to your community.
           </h2>
           <p className="text-brand-silver text-lg leading-relaxed mb-10">
-            Whether you&apos;re a parent looking for summer camp, a YMCA director building
+            Whether you&apos;re a parent looking for summer camp, a community partner building
             programming, or a company investing in your team — we&apos;d love to talk.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
