@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -8,11 +9,21 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border">
+      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold tracking-tight">
-          Breathe<span className="gradient-text">EZ</span>Ai
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/logo-transparent.png"
+            alt="BreatheEzAi"
+            width={140}
+            height={56}
+            className="h-14 w-auto"
+            priority
+          />
+          <span className="text-lg font-bold tracking-tight">
+            Breathe<span className="gradient-text">EZ</span>Ai
+          </span>
         </Link>
 
         {/* Desktop nav */}

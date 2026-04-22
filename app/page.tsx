@@ -1,39 +1,69 @@
+'use client';
+
 import Link from 'next/link';
+import Image from 'next/image';
+import FadeIn from '@/components/FadeIn';
 import {
   ArrowRight,
   BookOpen,
   Users,
-  Gamepad2,
-  Building2,
+  Briefcase,
   Shield,
   GraduationCap,
   Sparkles,
 } from 'lucide-react';
 
+const heroSegments = [
+  {
+    num: '01',
+    icon: Users,
+    iconClass: 'bg-brand-cyan/20 text-brand-cyan',
+    name: 'Youth Programs',
+    desc: 'Summer camps & community partnerships',
+    margin: 'ml-0 mr-12',
+  },
+  {
+    num: '02',
+    icon: GraduationCap,
+    iconClass: 'bg-brand-green/20 text-brand-green',
+    name: 'Schools & Educators',
+    desc: 'Student sessions & teacher PD',
+    margin: 'ml-12 mr-0',
+  },
+  {
+    num: '03',
+    icon: Briefcase,
+    iconClass: 'bg-white/10 text-white',
+    name: 'Businesses & Teams',
+    desc: 'Workshops & workflow training',
+    margin: 'ml-0 mr-8',
+  },
+];
+
 const whyCards = [
   {
     icon: BookOpen,
-    title: 'Human-Led, Not Screen-Based',
-    body: 'Every session is taught by a real instructor. Kids create — AI amplifies. We never hand kids a screen and walk away.',
+    title: 'Zero Setup, Zero Risk',
+    body: "We provide everything — curriculum, instructors, insurance, materials, technology. You provide the space. If it doesn't work, you walk away with no investment lost.",
   },
   {
     icon: Sparkles,
-    title: 'Project-Based Learning',
-    body: 'Students take home tangible projects every week — art books, storybooks, idea plans. Not just screen time, real creative output.',
+    title: 'Proven Demand',
+    body: "Organizations everywhere are under pressure to deliver AI programming. We give you a ready-to-run offering with market-validated pricing — so you meet demand without building from scratch.",
   },
   {
     icon: Shield,
-    title: 'Turnkey for Partners',
-    body: 'We bring the curriculum, instructors, materials, and technology. You provide the space and the families. Zero setup on your end.',
+    title: 'Credibility Built In',
+    body: 'Background-checked instructors, research-backed curriculum, and alignment with the White House Executive Order on AI Education. Your members get programming you can stand behind.',
   },
 ];
 
 const outcomes = [
-  'Explain what a prompt is and why it matters',
-  'Write detailed prompts that produce specific results',
-  'Use AI as a creative tool while owning their ideas',
-  'Critically evaluate AI output instead of blindly accepting it',
-  'A portfolio of projects they directed themselves',
+  'A turnkey program running at your site within 30 days',
+  'Revenue share or flat fee — whichever fits your budget model',
+  'Full media kit: photos, testimonials, parent quotes, completion data',
+  'Case-study material for grants, board reports, and marketing',
+  'A recurring program your community asks for every season',
 ];
 
 export default function Home() {
@@ -47,44 +77,83 @@ export default function Home() {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-green/20 rounded-full blur-[120px]" />
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-6 py-28 md:py-40 text-center">
-          <p className="text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-6">
-            AI Literacy Education
-          </p>
+        <div className="relative max-w-6xl mx-auto px-6 py-28 md:py-40">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* LEFT — copy */}
+            <div>
+              <Image
+                src="/logo-transparent.png"
+                width={320}
+                height={144}
+                alt="BreatheEzAi"
+                className="mb-8 h-auto w-56 md:w-64"
+              />
 
-          <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Making AI accessible
-            <br />
-            <span className="gradient-text">for everyone.</span>
-          </h1>
+              <p className="text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-6">
+                For Organizations
+              </p>
 
-          <p className="text-lg md:text-xl text-brand-silver max-w-2xl mx-auto mb-10 leading-relaxed">
-            From summer camps that teach kids to think with AI, to workshops that upskill your
-            workforce — we bring AI literacy to your community.
-          </p>
+              <h1
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                Bring AI literacy
+                <br />
+                <span className="gradient-text">to your community.</span>
+              </h1>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#programs"
-              className="inline-flex items-center justify-center gap-2 bg-brand-cyan text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-brand-cyan-dark hover:-translate-y-0.5 transition-all duration-200"
-            >
-              Explore Programs <ArrowRight size={18} />
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-white/10 transition-all duration-200"
-            >
-              Book a Call
-            </a>
+              <p className="text-lg text-brand-silver leading-relaxed max-w-lg mb-10">
+                Turnkey AI education programs for community centers, schools, and organizations.
+                We bring the curriculum, instructors, and technology — you bring the families.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="mailto:breatheez@thebreatheez.com"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-cyan text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-brand-cyan-dark hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  Schedule a Partnership Call <ArrowRight size={18} />
+                </a>
+                <a
+                  href="#programs"
+                  className="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-white/10 transition-all duration-200"
+                >
+                  Explore Programs
+                </a>
+              </div>
+            </div>
+
+            {/* RIGHT — business model preview */}
+            <div className="relative aspect-square max-h-[520px] rounded-2xl overflow-hidden bg-gradient-to-br from-brand-cyan/20 via-brand-dark/50 to-brand-green/20 border border-white/10 p-8">
+              {/* Dot grid */}
+              <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[size:24px_24px]" />
+
+              <div className="relative h-full flex flex-col justify-center gap-4">
+                {heroSegments.map(({ num, icon: Icon, iconClass, name, desc, margin }) => (
+                  <div
+                    key={num}
+                    className={`${margin} bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 flex items-start gap-4 hover:bg-white/10 hover:border-white/20 transition-all`}
+                  >
+                    <div className={`w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 ${iconClass}`}>
+                      <Icon size={20} />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-[10px] text-white/40 tracking-widest font-mono mb-1">{num}</p>
+                      <p className="text-white font-semibold text-sm mb-1">{name}</p>
+                      <p className="text-xs text-brand-silver/80 leading-relaxed">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── SECTION 2: TRUST BAR ────────────────────────────────────── */}
       <section className="border-b border-border py-6 bg-muted">
+        <FadeIn>
         <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center items-center gap-8 md:gap-16">
           <div className="flex items-center gap-2">
             <Shield size={16} className="text-brand-cyan" />
@@ -99,28 +168,32 @@ export default function Home() {
             <span className="text-sm text-muted-foreground">White House AI Education Aligned</span>
           </div>
         </div>
+        </FadeIn>
       </section>
 
-      {/* ── SECTION 3: WHY IT MATTERS ───────────────────────────────── */}
+      {/* ── SECTION 3: WHY PARTNER ──────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-4">
-              Why This Matters
+              Why Partner With Us
             </p>
             <h2
               className="text-3xl md:text-4xl font-bold mb-6"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              AI is here. The question is who teaches your kids to use it.
+              Access is not capability.
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              51% of teens are already using AI without guidance. 65% of today&apos;s kids will work
-              in jobs that don&apos;t exist yet. There&apos;s nothing between a $1,000/week coding
-              camp and a YouTube rabbit hole. We fill that gap.
+              Your families have AI tools. What they don&apos;t have is the skill to use them well.
+              We turn access into practical, responsible capability — with a complete, research-backed
+              program your community can trust.
             </p>
           </div>
+          </FadeIn>
 
+          <FadeIn delay={0.15}>
           <div className="grid md:grid-cols-3 gap-8">
             {whyCards.map(({ icon: Icon, title, body }) => (
               <div
@@ -135,12 +208,14 @@ export default function Home() {
               </div>
             ))}
           </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── SECTION 4: PROGRAMS ─────────────────────────────────────── */}
       <section id="programs" className="py-20 md:py-28 bg-muted">
         <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-4">
               Our Programs
@@ -149,77 +224,83 @@ export default function Home() {
               className="text-3xl md:text-4xl font-bold"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              AI literacy at every level.
+              One capability. Three segments.
             </h2>
           </div>
+          </FadeIn>
 
+          <FadeIn delay={0.15}>
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1 — Summer Camp */}
+            {/* Card 1 — Youth Programs */}
             <Link
               href="/camp"
               className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-brand-cyan/40 hover:shadow-xl transition-all duration-300"
             >
-              <div className="h-48 bg-gradient-to-br from-brand-cyan/10 to-brand-green/10 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-br from-brand-cyan/15 to-brand-green/10 flex items-center justify-center">
                 <Users size={48} className="text-brand-cyan group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div className="p-8">
                 <p className="text-xs font-semibold text-brand-green uppercase tracking-wider mb-2">
-                  Now Enrolling
+                  Now Enrolling — Summer 2026
                 </p>
-                <h3 className="text-xl font-semibold mb-3">PromptEz Summer Camp</h3>
+                <h3 className="text-xl font-semibold mb-3">Youth Programs</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  A hands-on, 4-week camp where kids ages 6–17 learn to create with AI — storybooks,
-                  art, inventions — guided by real instructors.
+                  Summer camps and community partnerships that introduce kids to AI through hands-on
+                  projects, instructor-led sessions, and take-home portfolios.
                 </p>
                 <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-cyan group-hover:gap-3 transition-all duration-200">
-                  Learn More <ArrowRight size={16} />
+                  Explore Camp <ArrowRight size={16} />
                 </span>
               </div>
             </Link>
 
-            {/* Card 2 — PromptEz Game */}
-            <Link
-              href="/play"
+            {/* Card 2 — Schools & Educators */}
+            <a
+              href="mailto:breatheez@thebreatheez.com"
               className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-brand-cyan/40 hover:shadow-xl transition-all duration-300"
             >
-              <div className="h-48 bg-gradient-to-br from-brand-dark/5 to-brand-cyan/10 flex items-center justify-center">
-                <Gamepad2 size={48} className="text-brand-cyan group-hover:scale-110 transition-transform duration-300" />
+              <div className="h-48 bg-gradient-to-br from-brand-green/15 to-brand-cyan/10 flex items-center justify-center">
+                <GraduationCap size={48} className="text-brand-green group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div className="p-8">
                 <p className="text-xs font-semibold text-brand-cyan uppercase tracking-wider mb-2">
-                  Play Free
+                  Pilot Cohorts Open
                 </p>
-                <h3 className="text-xl font-semibold mb-3">PromptEz Game</h3>
+                <h3 className="text-xl font-semibold mb-3">Schools &amp; Educators</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  Competitive AI prompting challenges that make learning feel like play. Battle friends,
-                  earn badges, and level up your prompt-writing skills.
+                  Student sessions, teacher professional development, and classroom-ready curriculum
+                  that brings AI literacy into the school day.
                 </p>
                 <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-cyan group-hover:gap-3 transition-all duration-200">
-                  Play Now <ArrowRight size={16} />
+                  Request Info <ArrowRight size={16} />
                 </span>
               </div>
-            </Link>
+            </a>
 
-            {/* Card 3 — Coming Soon */}
-            <div className="opacity-75 bg-white rounded-2xl overflow-hidden border border-border">
-              <div className="h-48 bg-gradient-to-br from-brand-silver/10 to-brand-silver/5 flex items-center justify-center">
-                <Building2 size={48} className="text-brand-silver" />
+            {/* Card 3 — Businesses & Teams */}
+            <a
+              href="mailto:breatheez@thebreatheez.com"
+              className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-brand-cyan/40 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="h-48 bg-gradient-to-br from-brand-dark/10 to-brand-cyan/10 flex items-center justify-center">
+                <Briefcase size={48} className="text-brand-dark group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div className="p-8">
                 <p className="text-xs font-semibold text-brand-silver uppercase tracking-wider mb-2">
-                  Coming Fall 2026
+                  By Inquiry
                 </p>
-                <h3 className="text-xl font-semibold mb-3">Academy &amp; Corporate</h3>
+                <h3 className="text-xl font-semibold mb-3">Businesses &amp; Teams</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                  Continuing education for adults and turnkey corporate AI training. Upskill your
-                  workforce without the six-figure consulting fee.
+                  Workshops, workflow training, and implementation sprints that turn team-wide AI
+                  access into real productivity and responsible adoption.
                 </p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-silver">
-                  Coming Soon
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-cyan group-hover:gap-3 transition-all duration-200">
+                  Start a Conversation <ArrowRight size={16} />
                 </span>
               </div>
-            </div>
+            </a>
           </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -228,38 +309,41 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Left */}
+            <FadeIn>
             <div>
               <p className="text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-4">
-                Our Philosophy
+                What Partnership Looks Like
               </p>
               <h2
                 className="text-3xl md:text-4xl font-bold mb-6"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
-                Kids create.
+                We handle everything.
                 <br />
-                AI amplifies.
+                You own the win.
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                We believe AI is a tool — not a teacher, not a babysitter, and definitely not a
-                replacement for a curious mind. Every BreatheEzAi session starts with a human idea
-                and ends with a student-directed project.
+                Partnering with BreatheEasyAI means zero curriculum development, zero instructor
+                recruitment, zero technology headaches. We bring a complete program. Your
+                organization gets credit for the outcomes.
               </p>
               <blockquote className="border-l-4 border-brand-cyan pl-6 py-2 mb-8">
                 <p className="text-xl font-medium italic">
-                  &ldquo;That&apos;s AI&apos;s idea. What&apos;s yours?&rdquo;
+                  &ldquo;Your families asked for AI education. Now you can say yes.&rdquo;
                 </p>
               </blockquote>
               <p className="text-muted-foreground leading-relaxed">
-                We teach students to interrogate AI output, challenge its assumptions, and apply
-                their own creativity. Critical thinking isn&apos;t a bonus — it&apos;s the whole
-                point.
+                Every engagement is designed to produce case-study material — photos, testimonials,
+                completion data — that strengthens your organization&apos;s story for the next
+                funding cycle, grant application, or board meeting.
               </p>
             </div>
+            </FadeIn>
 
             {/* Right */}
+            <FadeIn delay={0.15}>
             <div className="bg-muted rounded-2xl p-10">
-              <h3 className="text-lg font-semibold mb-6">What students walk away with:</h3>
+              <h3 className="text-lg font-semibold mb-6">What your organization walks away with:</h3>
               <ul className="flex flex-col gap-4">
                 {outcomes.map((outcome) => (
                   <li key={outcome} className="flex items-start gap-3">
@@ -285,32 +369,34 @@ export default function Home() {
                 ))}
               </ul>
             </div>
+            </FadeIn>
           </div>
         </div>
       </section>
 
       {/* ── SECTION 6: CONTACT CTA ──────────────────────────────────── */}
       <section id="contact" className="py-20 md:py-28 bg-brand-dark text-white text-center">
+        <FadeIn>
         <div className="max-w-3xl mx-auto px-6">
           <p className="text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-4">
-            Get Started
+            Next Step
           </p>
           <h2
             className="text-3xl md:text-4xl font-bold mb-6"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Bring AI literacy to your community.
+            Let&apos;s talk about your program.
           </h2>
           <p className="text-brand-silver text-lg leading-relaxed mb-10">
-            Whether you&apos;re a parent looking for summer camp, a community partner building
-            programming, or a company investing in your team — we&apos;d love to talk.
+            A 20-minute discovery call is all it takes to scope fit, format, and timeline for your
+            organization. No deck. No pitch. Just a conversation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:breatheez@thebreatheez.com"
               className="inline-flex items-center justify-center gap-2 bg-brand-cyan text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-brand-cyan-dark hover:-translate-y-0.5 transition-all duration-200"
             >
-              Book a Call <ArrowRight size={18} />
+              Book a 20-Minute Call <ArrowRight size={18} />
             </a>
             <Link
               href="/camp"
@@ -320,6 +406,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        </FadeIn>
       </section>
     </>
   );

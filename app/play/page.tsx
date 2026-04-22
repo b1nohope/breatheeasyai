@@ -1,4 +1,7 @@
+'use client';
+
 import { Zap, Trophy, Users, Target } from 'lucide-react';
+import FadeIn from '@/components/FadeIn';
 
 export default function PlayPage() {
   return (
@@ -55,6 +58,7 @@ export default function PlayPage() {
       {/* ── SECTION 2: HOW IT WORKS ─────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-4">
               How It Works
@@ -66,7 +70,9 @@ export default function PlayPage() {
               Think fast. Prompt better.
             </h2>
           </div>
+          </FadeIn>
 
+          <FadeIn delay={0.15}>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -98,12 +104,14 @@ export default function PlayPage() {
               </div>
             ))}
           </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── SECTION 3: MODES ────────────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-muted">
         <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Classroom Mode */}
             <div className="bg-white rounded-2xl p-10 border border-border">
@@ -149,11 +157,13 @@ export default function PlayPage() {
               </span>
             </div>
           </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── SECTION 4: CTA ──────────────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-brand-dark text-white text-center">
+        <FadeIn>
         <div className="max-w-3xl mx-auto px-6">
           <h2
             className="text-3xl md:text-4xl font-bold mb-6"
@@ -174,6 +184,7 @@ export default function PlayPage() {
             Play PromptEz
           </a>
         </div>
+        </FadeIn>
       </section>
     </>
   );

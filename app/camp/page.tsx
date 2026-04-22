@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import FadeIn from '@/components/FadeIn';
 import {
   ArrowRight,
   Calendar,
@@ -19,6 +22,7 @@ const tiers = [
     duration: '45 min / session',
     price: '$160',
     period: '/month',
+    stripeUrl: 'https://book.stripe.com/aFa14o1lNbmwb4hgz85os02',
     features: [
       'Introduction to prompts',
       'AI art creation with Kidgeni',
@@ -34,6 +38,7 @@ const tiers = [
     duration: '60 min / session',
     price: '$220',
     period: '/month',
+    stripeUrl: 'https://book.stripe.com/8x214od4v0HS0pDfv45os01',
     features: [
       'Advanced prompt engineering',
       'Real-world problem solving with AI',
@@ -49,6 +54,7 @@ const tiers = [
     duration: '90 min / session',
     price: '$320',
     period: '/month',
+    stripeUrl: 'https://book.stripe.com/3cI5kE9Sj76g3BPer05os00',
     features: [
       'Hybrid in-person + Zoom option',
       'Advanced AI applications',
@@ -146,6 +152,7 @@ export default function CampPage() {
       {/* ── SECTION 2: QUICK FACTS BAR ──────────────────────────────── */}
       <section className="border-b border-border py-8 bg-white">
         <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { icon: Calendar, label: '4 Weeks', sub: '8 Sessions Total' },
@@ -160,12 +167,14 @@ export default function CampPage() {
               </div>
             ))}
           </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── SECTION 3: PRICING TIERS ────────────────────────────────── */}
       <section id="tiers" className="py-20 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-4">
               Programs
@@ -177,7 +186,9 @@ export default function CampPage() {
               Three tiers. One mission.
             </h2>
           </div>
+          </FadeIn>
 
+          <FadeIn delay={0.15}>
           <div className="grid md:grid-cols-3 gap-8">
             {tiers.map((tier) => (
               <div
@@ -234,12 +245,10 @@ export default function CampPage() {
                 </ul>
 
                 <a
-                  href="#enroll"
-                  className={`inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg text-sm font-semibold transition-all duration-200 ${
-                    tier.popular
-                      ? 'bg-brand-cyan text-white hover:bg-brand-cyan-dark'
-                      : 'bg-muted text-foreground hover:bg-border'
-                  }`}
+                  href={tier.stripeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg text-sm font-semibold transition-all duration-200 bg-brand-cyan text-white hover:bg-brand-cyan-dark"
                 >
                   Enroll Now
                 </a>
@@ -247,16 +256,21 @@ export default function CampPage() {
             ))}
           </div>
 
+          </FadeIn>
+
+          <FadeIn delay={0.3}>
           <p className="text-center text-sm text-muted-foreground mt-10">
             Sibling discount: $30 off &nbsp;·&nbsp; Early bird: 10% off &nbsp;·&nbsp; Referral
             credit: $20 per enrolled referral
           </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── SECTION 4: WEEKLY CURRICULUM ────────────────────────────── */}
       <section className="py-20 md:py-28 bg-muted">
         <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-4">
               The Journey
@@ -268,7 +282,9 @@ export default function CampPage() {
               4 weeks. 4 projects. 1 portfolio.
             </h2>
           </div>
+          </FadeIn>
 
+          <FadeIn delay={0.15}>
           <div className="grid md:grid-cols-2 gap-8">
             {weeks.map(({ week, title, icon: Icon, body, takeHome }) => (
               <div key={week} className="bg-white rounded-2xl p-8 border border-border">
@@ -295,12 +311,14 @@ export default function CampPage() {
               </div>
             ))}
           </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── SECTION 5: PARTNER CTA ──────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
           <div className="bg-brand-dark rounded-3xl p-10 md:p-16 text-center text-white">
             <p className="text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-4">
               For Community Partners
@@ -323,11 +341,13 @@ export default function CampPage() {
               Request a Partnership Call <ArrowRight size={18} />
             </a>
           </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── SECTION 6: ENROLLMENT CTA ───────────────────────────────── */}
       <section id="enroll" className="py-20 md:py-28 bg-brand-dark text-white text-center">
+        <FadeIn>
         <div className="max-w-3xl mx-auto px-6">
           <p className="text-brand-green text-sm font-semibold tracking-widest uppercase mb-4">
             Summer 2026
@@ -357,6 +377,7 @@ export default function CampPage() {
             </a>
           </div>
         </div>
+        </FadeIn>
       </section>
     </>
   );

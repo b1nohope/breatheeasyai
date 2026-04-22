@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,6 +8,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10">
           {/* Column 1 — Brand */}
           <div className="md:col-span-2">
+            <Image src="/logo-transparent.png" width={180} height={80} alt="BreatheEzAi" className="mb-4" />
             <h3 className="text-xl font-bold mb-3">
               Breathe<span className="text-brand-cyan">EZ</span>Ai
             </h3>
@@ -21,13 +23,17 @@ export default function Footer() {
             <h4 className="text-sm font-semibold mb-4 text-brand-silver">Programs</h4>
             <div className="flex flex-col gap-3">
               <Link href="/camp" className="text-sm text-brand-silver hover:text-white transition-colors">
-                Summer Camp
+                Youth Programs
               </Link>
+              <a href="mailto:breatheez@thebreatheez.com" className="text-sm text-brand-silver hover:text-white transition-colors">
+                Schools &amp; Educators
+              </a>
+              <a href="mailto:breatheez@thebreatheez.com" className="text-sm text-brand-silver hover:text-white transition-colors">
+                Businesses &amp; Teams
+              </a>
               <Link href="/play" className="text-sm text-brand-silver hover:text-white transition-colors">
                 PromptEz Game
               </Link>
-              <span className="text-sm text-brand-silver/50">Academy (Coming Soon)</span>
-              <span className="text-sm text-brand-silver/50">Corporate Training (Coming Soon)</span>
             </div>
           </div>
 
@@ -42,6 +48,12 @@ export default function Footer() {
                 breatheez@thebreatheez.com
               </a>
               <p className="text-sm text-brand-silver">Clarksville, TN</p>
+              <Link href="/privacy" className="text-sm text-brand-silver hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-sm text-brand-silver hover:text-white transition-colors">
+                Terms of Service
+              </Link>
             </div>
           </div>
         </div>
