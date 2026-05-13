@@ -335,7 +335,7 @@ export default function CampPage() {
               moment you say yes.
             </p>
             <a
-              href="mailto:breatheez@thebreatheez.com"
+              href="mailto:breatheezai@thebreatheez.com"
               className="inline-flex items-center justify-center gap-2 bg-brand-cyan text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-brand-cyan-dark hover:-translate-y-0.5 transition-all duration-200"
             >
               Request a Partnership Call <ArrowRight size={18} />
@@ -364,13 +364,13 @@ export default function CampPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:breatheez@thebreatheez.com"
+              href="mailto:breatheezai@thebreatheez.com"
               className="inline-flex items-center justify-center gap-2 bg-brand-green text-brand-dark px-8 py-3.5 rounded-lg font-semibold hover:bg-brand-green-dark hover:text-white hover:-translate-y-0.5 transition-all duration-200"
             >
               Enroll Your Child <ArrowRight size={18} />
             </a>
             <a
-              href="mailto:breatheez@thebreatheez.com"
+              href="mailto:breatheezai@thebreatheez.com"
               className="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-white/10 transition-all duration-200"
             >
               Join the Waitlist

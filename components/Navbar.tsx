@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { BOOKING_URL } from '@/lib/constants';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -34,11 +35,16 @@ export default function Navbar() {
           <Link href="/camp" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Summer Camp
           </Link>
+          <Link href="/businesses" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            Businesses
+          </Link>
           <Link href="/play" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             PromptEz Game
           </Link>
           <a
-            href="#contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-brand-cyan text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-brand-cyan-dark transition-colors"
           >
             Book a Call
@@ -64,11 +70,16 @@ export default function Navbar() {
           <Link href="/camp" className="text-sm font-medium py-2" onClick={() => setOpen(false)}>
             Summer Camp
           </Link>
+          <Link href="/businesses" className="text-sm font-medium py-2" onClick={() => setOpen(false)}>
+            Businesses
+          </Link>
           <Link href="/play" className="text-sm font-medium py-2" onClick={() => setOpen(false)}>
             PromptEz Game
           </Link>
           <a
-            href="#contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-brand-cyan text-white px-5 py-2 rounded-lg text-sm font-semibold text-center hover:bg-brand-cyan-dark transition-colors"
             onClick={() => setOpen(false)}
           >

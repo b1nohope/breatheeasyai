@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import FadeIn from '@/components/FadeIn';
+import { BOOKING_URL } from '@/lib/constants';
 import {
   ArrowRight,
   BookOpen,
@@ -109,7 +110,9 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="mailto:breatheez@thebreatheez.com"
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-brand-cyan text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-brand-cyan-dark hover:-translate-y-0.5 transition-all duration-200"
                 >
                   Schedule a Partnership Call <ArrowRight size={18} />
@@ -256,7 +259,9 @@ export default function Home() {
 
             {/* Card 2 — Schools & Educators */}
             <a
-              href="mailto:breatheez@thebreatheez.com"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-brand-cyan/40 hover:shadow-xl transition-all duration-300"
             >
               <div className="h-48 bg-gradient-to-br from-brand-green/15 to-brand-cyan/10 flex items-center justify-center">
@@ -279,7 +284,9 @@ export default function Home() {
 
             {/* Card 3 — Businesses & Teams */}
             <a
-              href="mailto:breatheez@thebreatheez.com"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group bg-white rounded-2xl overflow-hidden border border-border hover:border-brand-cyan/40 hover:shadow-xl transition-all duration-300"
             >
               <div className="h-48 bg-gradient-to-br from-brand-dark/10 to-brand-cyan/10 flex items-center justify-center">
@@ -393,7 +400,9 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:breatheez@thebreatheez.com"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-brand-cyan text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-brand-cyan-dark hover:-translate-y-0.5 transition-all duration-200"
             >
               Book a 20-Minute Call <ArrowRight size={18} />

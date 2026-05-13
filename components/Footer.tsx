@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { BOOKING_URL } from '@/lib/constants';
 
 export default function Footer() {
   return (
@@ -25,12 +26,12 @@ export default function Footer() {
               <Link href="/camp" className="text-sm text-brand-silver hover:text-white transition-colors">
                 Youth Programs
               </Link>
-              <a href="mailto:breatheez@thebreatheez.com" className="text-sm text-brand-silver hover:text-white transition-colors">
+              <a href="mailto:breatheezai@thebreatheez.com" className="text-sm text-brand-silver hover:text-white transition-colors">
                 Schools &amp; Educators
               </a>
-              <a href="mailto:breatheez@thebreatheez.com" className="text-sm text-brand-silver hover:text-white transition-colors">
+              <Link href="/businesses" className="text-sm text-brand-silver hover:text-white transition-colors">
                 Businesses &amp; Teams
-              </a>
+              </Link>
               <Link href="/play" className="text-sm text-brand-silver hover:text-white transition-colors">
                 PromptEz Game
               </Link>
@@ -41,11 +42,11 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold mb-4 text-brand-silver">Connect</h4>
             <div className="flex flex-col gap-3">
-              <a href="#contact" className="text-sm text-brand-silver hover:text-white transition-colors">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-brand-silver hover:text-white transition-colors">
                 Book a Call
               </a>
-              <a href="mailto:breatheez@thebreatheez.com" className="text-sm text-brand-silver hover:text-white transition-colors">
-                breatheez@thebreatheez.com
+              <a href="mailto:breatheezai@thebreatheez.com" className="text-sm text-brand-silver hover:text-white transition-colors">
+                breatheezai@thebreatheez.com
               </a>
               <p className="text-sm text-brand-silver">Clarksville, TN</p>
               <Link href="/privacy" className="text-sm text-brand-silver hover:text-white transition-colors">
