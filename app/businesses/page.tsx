@@ -92,7 +92,7 @@ const whyUs = [
   {
     icon: Layers,
     title: 'Built on Your Stack',
-    body: 'No new SaaS subscriptions. We work with the tools you already use — Google Workspace, your CRM, n8n, Zapier — and make them work together.',
+    body: 'We build on the tools that fit your workflow. Where you already have software, we connect it. Where you need new capability, we select and configure it — so everything works together from day one.',
   },
 ];
 
