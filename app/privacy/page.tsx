@@ -14,12 +14,12 @@ export default function PrivacyPage() {
   );
 
   return (
-    <section className="min-h-screen bg-white py-16 px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="privacy-content">
-          <div suppressHydrationWarning dangerouslySetInnerHTML={{ __html: privacyContent }} />
-        </div>
-      </div>
-    </section>
+    <div className="wrap legal-page">
+      <article
+        className="legal-paper"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: privacyContent }}
+      />
+    </div>
   );
 }

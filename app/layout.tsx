@@ -1,12 +1,33 @@
 import type { Metadata } from "next";
+import { Unbounded, Sora, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import "./design.css";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
+import SiteEffects from "@/components/SiteEffects";
+
+const unbounded = Unbounded({
+  subsets: ["latin"],
+  weight: ["400", "600", "800"],
+  variable: "--font-unbounded",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-sora",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
+});
 
 export const metadata: Metadata = {
-  title: "BreatheEzAi | AI Literacy Education",
+  title: "BreatheEzAI — AI literacy & automation, proven live",
   description:
-    "AI literacy for kids and adults — taught by humans, not handed off to screens. Summer camps, courses, and corporate training in Clarksville, TN.",
+    "AI automation for businesses and AI literacy education for kids, schools, and organizations in Clarksville, TN.",
 };
 
 export default function RootLayout({
@@ -15,11 +36,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${unbounded.variable} ${sora.variable} ${plexMono.variable}`}
+    >
       <body className="antialiased">
-        <Navbar />
-        <main className="pt-20">{children}</main>
-        <Footer />
+        <SiteEffects />
+        <SiteNav />
+        {children}
+        <SiteFooter />
       </body>
     </html>
   );
